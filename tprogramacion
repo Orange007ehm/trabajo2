@@ -1,0 +1,423 @@
+package javaapplication11;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Dr Efrain
+ */
+public class JavaApplication11 {
+
+    /**
+     * ejercicio 4.14
+     */
+    public static void main(String[] args) {
+        int alumnos;
+        int aprobados=0;
+        int desaprobados=0;
+        float nota=0;
+        int i=1;
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("introdusca total de alumnos: ");
+        alumnos =entrada.nextInt();
+        while (i<=alumnos){
+            
+            System.out.println("introdusca la nota de 0 a 20 nota del alumno: "+i);
+            nota = entrada.nextFloat();
+            if (nota>= 0 && nota<=12);
+            {
+                desaprobados++;
+            }
+            if (nota>=13 && nota<=20)
+                    {
+                    aprobados++;
+                    }
+            i++;
+            
+        }
+            System.out.println("numero de aprobados: "+aprobados);
+            System.out.println("numero de desaprobados: "+desaprobados);
+    }
+    
+}
+----------------------------------------------------------------------------------2
+import java.util.Scanner;
+public class EjerciciosCiclicos {
+    
+    static Scanner teclado=new Scanner(System.in);
+    public static void identificarColorFoco() {
+        //definir Variables
+        int nFocos, fVerde=0, fBlanco=0, fRojo=0;
+        //Datos de entrada
+        System.out.println("Ingrese N cantidad de Focos:");
+        nFocos=teclado.nextInt();
+        //Proceso
+        for (int foco = 1; foco <= nFocos; foco++) {
+        for (int foco=1; foco<=nFocos; foco++) {
+            System.out.print("Ingrese el color (V=Verde, B=Blanco y R=Rojo)"+
+            "del foco # "+foco+":");
+            String color=teclado.next();
+            if(color.toUpperCase().equals("V")){ fVerde++; }
+            if(color.toUpperCase().equals("B")){ fBlanco=fBlanco+1; }
+            if(color.toUpperCase().equals("R")){ fRojo+=1; }
+            System.out.println("");
+        }
+        //Datos de salida
+        System.out.println("Del total de focos:\n"+fVerde+" son Verde(s)\n"+
+        fBlanco+" son Blanco(s)\n"+fRojo+" son Rojo(s)\nEn total son:"+nFocos);
+    }
+    public static void main(String[] args) {
+        identificarColorFoco();
+    }
+}
+--------------------------------------------------------------------------------3
+package javaapplication12;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Dr Efrain
+ */
+public class JavaApplication12 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        int a;
+        int Ntrabajadores;
+        float sueldo, stotal, porcentaje;
+        String nombre;
+        int i=1;
+        System.out.println("introdusca en numero de trabajadores: ");
+        trabajadores = entrada.nextInt();
+        while (i<=trabajadores){
+            System.out.println("introdusca el nombre del trabajador: "+i);
+            nombre = entrada.next();
+            System.out.println("introdusca el sueldo del trabajador: "+i);
+            sueldo = entrada.nextFloat();
+            
+         if (sueldo>= 0 && sueldo<=150){
+             
+             porcentaje = sueldo * 5/100;
+             stotal = sueldo - porcentaje;
+    }
+         if (sueldo>= 151 && sueldo<=299){
+             porcentaje = sueldo * 7/100;
+             stotal = sueldo - porcentaje;
+    }
+         if (sueldo>= 300 && sueldo<=450){
+             porcentaje = sueldo * 9/100;
+             stotal = sueldo - porcentaje;
+         }
+         
+         System.out.println("el nombre del trabajador es: "+nombre);
+        System.out.println("el salario del trabajador es: "+stotal);
+        i++;
+         }
+        }
+}
+
+-------------------------------------------------------------------------------4
+
+package javaapplication13;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Dr Efrain
+ */
+public class JavaApplication13 {
+
+    /**
+     * ejercicio numero 4.16
+     */
+    public static void main(String[] args) {
+       Scanner entrada = new Scanner(System.in);
+     int numero;
+     double cubo;
+        System.out.print("introduce el numero: ");
+        numero = entrada.nextInt();
+        while(numero !=-1){
+        cubo = Math.pow(numero, 3);
+            System.out.println("el numero del cubo es: "+cubo);
+         
+            System.out.println("introduce el numero o escribe -1 para terminar");
+            numero = entrada.nextInt();
+        }
+    }
+}
+------------------------------------------------------------------------------------5
+
+package javaapplication14;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Dr Efrain
+ */
+public class JavaApplication14 {
+
+    /**
+     * ejercicio 4.17
+     */
+    public static void main(String[] args) {
+     Scanner entrada = new Scanner(System.in);
+     int numero, resultado;
+     int contador=0;
+        System.out.println("ingrese un numero entero");
+        numero = entrada.nextInt();
+        System.out.println("la tabla del"+numero);
+        while(contador <= 12){
+            resultado= numero * contador;
+            System.out.println("la tabla del "+numero+"*"+contador+" es: "+resultado);
+            contador++;
+        }
+    }
+    
+}
+------------------------------------------------------------------------------------6
+package javaapplication15;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Dr Efrain
+ */
+public class JavaApplication15 {
+
+    /**
+     * 
+     * S =P(1 + I)n
+S es el valor futuro del crédito, es decir, el valor inicial del crédito más los intereses capitalizados.
+P es el valor presente del crédito, es decir, el valor inicial de crédito.
+I es la tasa de interés expresada en decimales (5% = 0,05 que resulta de 5/100).
+N es el periodo o número de meses de plazo del crédito.
+     */
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        int año, tiempo;
+        float   inversion, total, ctotal;
+        int contador=1;
+        inversion = 1500;
+        System.out.println("ingrese el año actual: ");
+        año= entrada.nextInt();
+        tiempo = año - 1961;
+        
+       
+        while (contador<=tiempo){
+            inversion = inversion + (inversion*15/100);
+            System.out.println("el año de inversion: "+contador+" es: s/ "+inversion);
+            contador++;
+        }
+        
+    }
+    
+}
+---------------------------------------------------------------------------------7
+package javaapplication16;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Dr Efrain
+ */
+public class JavaApplication16 {
+
+    /**
+     *ejercicio 4.19
+     */
+    public static void main(String[] args) {
+    Scanner entrada = new Scanner(System.in);
+    int n, clave;
+    float precio, impuesto, categoria1, categoria2, categoria3, total;
+    total = 0;
+    categoria1 = 0;
+    categoria2 = 0;
+    categoria3 = 0;
+        System.out.println("ingresar la cantidad de autos");
+        n = entrada.nextInt();
+        while (n>0){
+            System.out.println("ingresa el precio del auto: "+n);
+            precio = entrada.nextFloat();
+            System.out.println("ingresa la clave del auto");
+            clave = entrada.nextInt();
+            if (clave > 0 && clave<4){
+                if (clave ==1){
+                    impuesto = precio * 0.10f; 
+                    categoria1 = categoria1 + impuesto;
+                   total = total + impuesto;
+                System.out.println("el impuesto a pagar por el auto: "+n+" es s/: "+impuesto);
+                }
+                if (clave ==2){
+                    impuesto = precio * 0.07f; 
+                    categoria2 = categoria2 + impuesto;
+                    total = total + impuesto;
+                System.out.println("el impuesto a pagar por el auto: "+n+" es s/: "+impuesto);
+                }
+                if (clave ==3){
+                    impuesto = precio * 0.05f; 
+                    categoria3 = categoria3 + impuesto;
+                    total = total + impuesto;
+                System.out.println("el impuesto a pagar por el auto: "+n+" es s/: "+impuesto);
+                }
+                //total = total + impuesto;
+                //System.out.println("el impuesto a pagar por el auto: "+n+" es s/: "+impuesto);
+            }
+            else
+                System.out.println("ingrese la clave correcta");
+            
+        n--;
+        }
+        System.out.println("el impuesto por la categoria 1 es s/: "+categoria1);
+        System.out.println("el impuesto por la categoria 2 es s/: "+categoria2);
+        System.out.println("el impuesto por la categoria 3 es s/: "+categoria3);
+        System.out.println("el impuesto total por todos los autos es s/: "+total);
+    }
+    
+}
+-----------------------------------------------------------------------------------------8
+
+package javaapplication17;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Dr Efrain
+ */
+public class JavaApplication17 {
+
+    /**
+     * ejercicio 4.20
+     */
+    public static void main(String[] args) {
+      
+        double a;
+        Scanner num = new Scanner(System.in);
+        try {
+            System.out.print("Introduce un ángulo de (0...360°): ");
+            a = num.nextDouble();
+            anguloCal(a);
+        } catch (Exception e) {
+            System.out.println("ERROR: Datos incorrectos.");
+        }
+    }
+    static void anguloCal(double a){
+        //Primer punto, pasa "a" a radianes.
+        double b = Math.toRadians(a);
+        System.out.println("Seno de " + a + " es: " + Math.sin(b) );
+
+    }
+    }
+    
+
+-------------------------------------------------------------------------------------9
+package javaapplication18;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Dr Efrain
+ */
+public class JavaApplication18 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+    Scanner entrada = new Scanner(System.in);
+    float cantidad, total;
+    cantidad = 1;
+    total = 0;
+    while (cantidad != 0){
+        System.out.println("--------------------------------");
+        System.out.println("ingrese una cantidad **********|");
+        System.out.println("monedas de s/. 1     **********|");
+        System.out.println("monedas de s/. 5     **********|");
+        System.out.println("monedas y billetes de s/. 10 **|");
+        System.out.println("billetes de s/. 20   **********|");
+        System.out.println("billetes de s/. 50   **********|");
+        System.out.println("digite 0 para salir  **********|");
+        cantidad = entrada.nextFloat();
+        if(cantidad != 0){
+            if(cantidad==1){
+                total = total + cantidad;
+            }
+            if(cantidad == 5){
+                 total = total + cantidad;
+            }
+            if(cantidad == 10){
+                 total = total + cantidad;
+            }
+            if(cantidad == 20){
+                 total = total + cantidad;
+            }
+            if(cantidad == 50){
+                 total = total + cantidad;
+            }
+            }
+                System.out.println("la cantidad de dinero no existe");
+        }
+    
+        System.out.println("la cantidad de dinero en el monedero es s/. "+total);
+    }
+    
+    }
+    
+------------------------------------------------------------------------------------------10
+package javaapplication19;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Dr Efrain
+ */
+public class JavaApplication19 {
+
+    /**
+     * ejercicio 4.22
+     */
+    public static void main(String[] args) {
+         Scanner in = new Scanner(System.in);
+        double compras_realizadas, intereses, multa, pago_del_corte_anterior, pago_minimo;
+        double pago_para_no_generar_intereses, saldo_actual, saldo_anterior;
+        System.out.print("Ingresa el valor de compras realizadas: ");
+        compras_realizadas = in.nextDouble();
+        in.nextLine();
+        System.out.print("Ingresa el valor de pago del corte anterior: ");
+        pago_del_corte_anterior = in.nextDouble();
+        in.nextLine();
+        System.out.print("Ingresa el valor de saldo anterior: ");
+        saldo_anterior = in.nextDouble();
+        in.nextLine();
+        if(saldo_anterior*0.15>pago_del_corte_anterior)
+        {
+            intereses=saldo_anterior*0.12;
+            multa=200;
+        }
+        else
+        {
+            intereses=0;
+            multa=0;
+        }
+        saldo_actual=saldo_anterior+compras_realizadas-pago_del_corte_anterior+intereses+multa;
+        pago_minimo=saldo_actual*0.15;
+        pago_para_no_generar_intereses=saldo_actual*0.85;
+        System.out.println("Valor de intereses: " + intereses);
+        System.out.println("Valor de multa: " + multa);
+        System.out.println("Valor de pago minimo: " + pago_minimo);
+        System.out.println("Valor de pago para no generar intereses: " + pago_para_no_generar_intereses);
+        System.out.println("Valor de saldo actual: " + saldo_actual);
+    }
+    }
+    
+
